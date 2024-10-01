@@ -14,7 +14,7 @@ namespace ChatAdmin.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
-        [HttpPost]
+        [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterModel model)
         {
             if (ModelState.IsValid)

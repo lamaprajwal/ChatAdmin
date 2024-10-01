@@ -141,3 +141,5 @@ D:\pratice\ChatAdmin\ChatAdmin\obj\Debug\net8.0\refint\ChatAdmin.dll
 D:\pratice\ChatAdmin\ChatAdmin\obj\Debug\net8.0\ChatAdmin.pdb
 D:\pratice\ChatAdmin\ChatAdmin\obj\Debug\net8.0\ChatAdmin.genruntimeconfig.cache
 D:\pratice\ChatAdmin\ChatAdmin\obj\Debug\net8.0\ref\ChatAdmin.dll
+D:\pratice\ChatAdmin\ChatAdmin\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\pratice\ChatAdmin\ChatAdmin\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll

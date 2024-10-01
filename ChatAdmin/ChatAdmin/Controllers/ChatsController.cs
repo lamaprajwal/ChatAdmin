@@ -13,7 +13,7 @@ namespace ChatAdmin.Controllers
             _context = context;
             
         }
-        [HttpGet]
+        [HttpGet("RetriveUsers")]
         public async Task<IActionResult> GetUsers()
         {
             List<chatUser> users = await _context.Users.OrderBy(p => p.Name).ToListAsync();
