@@ -45,5 +45,42 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChatAdmin.Controllers.ChatsController",
+    "Method": "SendMessageToAdmin",
+    "RelativePath": "send-to-admin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messageContent",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChatAdmin.Controllers.ChatsController",
+    "Method": "SendMessageToUser",
+    "RelativePath": "send-to-user/{recipientId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recipientId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "messageContent",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

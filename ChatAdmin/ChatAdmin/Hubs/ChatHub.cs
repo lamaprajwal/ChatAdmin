@@ -48,11 +48,12 @@ namespace ChatAdmin.Hubs
                 await Clients.All.SendAsync("Users", user);
             }
         }
-        public async Task SendMessageToAdmin(string messageContent)
+        public async Task SendMessageToAdmin(string messageContent,string senderId)
         {
-            var senderId = Context.UserIdentifier;
-            var admin = await _userManager.Users.FirstOrDefaultAsync(u => u.Name=="admin@admin");
+            
+            chatUser admin = await _userManager.Users.FirstOrDefaultAsync(u => u.Name=="admin@admin");
 
+            string connectionId = Users.First(p => p.Value.ToString()==admin.Id).Key;
             var message = new Message
             {
                 SenderId = senderId,
@@ -64,24 +65,26 @@ namespace ChatAdmin.Hubs
             context.Chats.Add(message);
             await context.SaveChangesAsync();
 
-            await Clients.User(admin.Id).SendAsync("ReceiveMessage", senderId, messageContent);
+            await Clients.User(connectionId).SendAsync("ReceiveMessage", senderId, messageContent);
         }
         public async Task SendMessageToUser(string recipientId, string messageContent)
         {
-            var adminId = Context.UserIdentifier;
-
+            chatUser admin = await _userManager.Users.FirstOrDefaultAsync(u => u.Name == "admin@admin");
             var message = new Message
             {
-                SenderId = adminId,
+                SenderId = admin.Id,
                 RecipientId = recipientId,
                 Content = messageContent,
                 SentAt = DateTime.Now,
             };
-
             context.Chats.Add(message);
             await context.SaveChangesAsync();
+            string connectionId=Users.First(p=>p.Value.ToString()==message.RecipientId).Key;
+            await Clients.User(connectionId).SendAsync("ReceiveMessage", messageContent);
 
-            await Clients.User(recipientId).SendAsync("ReceiveMessage", adminId, messageContent);
         }
     }
 }
+
+
+

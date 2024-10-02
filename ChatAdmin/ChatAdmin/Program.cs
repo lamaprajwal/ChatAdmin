@@ -72,6 +72,7 @@ try
             {
                 UserName = "admin@admin",
                 Name = "admin@admin",
+                Status="Offline"
                
             };
             await userManager.CreateAsync(adminUser, "Admin@123");

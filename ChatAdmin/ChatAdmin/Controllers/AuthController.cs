@@ -19,7 +19,7 @@ namespace ChatAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new chatUser { UserName = model.Name, Name = model.Name };
+                var user = new chatUser { UserName = model.Name, Name = model.Name ,Status="Offline"};
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
