@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "D:\\pratice\\ChatAdmin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\controllers\\chatscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\controllers\\chatscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\models\\chatuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\models\\chatuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\migrations\\20240930133948_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\migrations\\20240930133948_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\models\\addrolemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -32,14 +40,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ChatAII/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\migrations\\20240930133948_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\migrations\\20240930133948_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\models\\chatuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|solutionrelative:chatadmin\\models\\chatuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D97680D-C149-4295-935E-0AB95FF26CC1}|ChatAdmin\\ChatAdmin.csproj|d:\\pratice\\chatadmin\\chatadmin\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,7 +73,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -81,20 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChatHub.cs",
-              "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Hubs\\ChatHub.cs",
-              "RelativeDocumentMoniker": "ChatAdmin\\Hubs\\ChatHub.cs",
-              "ToolTip": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Hubs\\ChatHub.cs",
-              "RelativeToolTip": "ChatAdmin\\Hubs\\ChatHub.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAAAE0AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T14:34:06.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "20240930133948_init.cs",
               "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Migrations\\20240930133948_init.cs",
               "RelativeDocumentMoniker": "ChatAdmin\\Migrations\\20240930133948_init.cs",
@@ -107,82 +94,94 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Message.cs",
               "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Models\\Message.cs",
               "RelativeDocumentMoniker": "ChatAdmin\\Models\\Message.cs",
               "ToolTip": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Models\\Message.cs",
               "RelativeToolTip": "ChatAdmin\\Models\\Message.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA8AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-30T12:44:13.804Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ChatsController.cs",
               "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Controllers\\ChatsController.cs",
               "RelativeDocumentMoniker": "ChatAdmin\\Controllers\\ChatsController.cs",
               "ToolTip": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Controllers\\ChatsController.cs",
               "RelativeToolTip": "ChatAdmin\\Controllers\\ChatsController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAC8AAAAoAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACcAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T06:11:04.455Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "dbo.AspNetUsers [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ChatAII/True/SqlTable/dbo.AspNetUsers.sql",
-              "ToolTip": "dbo.AspNetUsers [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-01T08:52:35.855Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "chatUser.cs",
-              "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Models\\chatUser.cs",
-              "RelativeDocumentMoniker": "ChatAdmin\\Models\\chatUser.cs",
-              "ToolTip": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Models\\chatUser.cs",
-              "RelativeToolTip": "ChatAdmin\\Models\\chatUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T09:38:56.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "ChatAdmin\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "ChatAdmin\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T14:34:05.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "ChatAdmin\\Data\\AppDbContext.cs",
               "ToolTip": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Data\\AppDbContext.cs",
               "RelativeToolTip": "ChatAdmin\\Data\\AppDbContext.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAyAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAABwAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-30T08:44:37.958Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "chatUser.cs",
+              "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Models\\chatUser.cs",
+              "RelativeDocumentMoniker": "ChatAdmin\\Models\\chatUser.cs",
+              "ToolTip": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Models\\chatUser.cs",
+              "RelativeToolTip": "ChatAdmin\\Models\\chatUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T09:38:56.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ChatAdmin\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ChatAdmin\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAABsAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T14:34:05.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "ChatAdmin\\Hubs\\ChatHub.cs",
+              "ToolTip": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "ChatAdmin\\Hubs\\ChatHub.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAAACwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T14:34:06.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "dbo.AspNetUsers [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ChatAII/True/SqlTable/dbo.AspNetUsers.sql",
+              "ToolTip": "dbo.AspNetUsers [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-10-01T08:52:35.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AddRoleModel.cs",
               "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Models\\AddRoleModel.cs",
               "RelativeDocumentMoniker": "ChatAdmin\\Models\\AddRoleModel.cs",
@@ -190,12 +189,11 @@
               "RelativeToolTip": "ChatAdmin\\Models\\AddRoleModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T08:44:38.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-30T08:44:38.619Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\pratice\\ChatAdmin\\ChatAdmin\\Program.cs",
               "RelativeDocumentMoniker": "ChatAdmin\\Program.cs",
@@ -203,8 +201,7 @@
               "RelativeToolTip": "ChatAdmin\\Program.cs",
               "ViewState": "AQIAADAAAAAAAAAAAAAAAEoAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T13:27:44.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-30T13:27:44.329Z"
             },
             {
               "$type": "Document",

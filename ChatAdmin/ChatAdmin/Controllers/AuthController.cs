@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ChatAdmin.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class AuthController : Controller
     {
         private readonly UserManager<chatUser> _userManager;
@@ -28,6 +30,7 @@ namespace ChatAdmin.Controllers
                     await _userManager.AddToRoleAsync(user, "Customer");
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return Ok(user);
+                   
                 }
             }
             return BadRequest();

@@ -5,10 +5,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Security.Claims;
 
 namespace ChatAdmin.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ChatsController : Controller
     {
         private readonly AppDbContext _context;
@@ -22,61 +25,24 @@ namespace ChatAdmin.Controllers
             _hubContext = hubContext;
 
         }
-        [HttpGet("RetriveUsers")]
+        [HttpGet("users")]
         public async Task<IActionResult> GetUsers()
         {
             List<chatUser> users = await _context.Users.OrderBy(p => p.Name).ToListAsync();
             return Ok(users);
         }
-        //[HttpPost("send-to-admin")]
-        //public async Task<IActionResult> SendMessageToAdmin([FromBody] string messageContent)
-        //{
-        //    var senderId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Get the sender ID from the authenticated user
+        [HttpGet("chats")]
+        public async Task<IActionResult> GetChats(string senderId, string recipientId)
+        {
+            List<Message> chats =
+                await _context.
+                Chats.Where
+                (p => p.SenderId == senderId && p.RecipientId == recipientId
+                ||p.RecipientId==senderId&&p.SenderId==recipientId)
+                .OrderBy(p=>p.SentAt)
+                .ToListAsync();
 
-        //    var admin = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == "admin@admin");
-
-        //    if (admin == null)
-        //    {
-        //        return NotFound("Admin user not found");
-        //    }
-
-        //    var message = new Message
-        //    {
-        //        SenderId = senderId,
-        //        RecipientId = admin.Id,
-        //        Content = messageContent,
-        //        SentAt = DateTime.Now,
-        //    };
-
-        //    _context.Chats.Add(message);
-        //    await _context.SaveChangesAsync();
-
-        //    // Send message via SignalR to the admin
-        //    await _hubContext.Clients.User(admin.Id).SendAsync("ReceiveMessage", senderId, messageContent);
-
-        //    return Ok("Message sent to admin");
-        //}
-
-        //[HttpPost("send-to-user/{recipientId}")]
-        //public async Task<IActionResult> SendMessageToUser(string recipientId, [FromBody] string messageContent)
-        //{
-        //    var adminId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Get the admin ID from the authenticated user
-
-        //    var message = new Message
-        //    {
-        //        SenderId = adminId,
-        //        RecipientId = recipientId,
-        //        Content = messageContent,
-        //        SentAt = DateTime.Now,
-        //    };
-
-        //    _context.Chats.Add(message);
-        //    await _context.SaveChangesAsync();
-
-        //    // Send message via SignalR to the user
-        //    await _hubContext.Clients.User(recipientId).SendAsync("ReceiveMessage", adminId, messageContent);
-
-        //    return Ok("Message sent to user");
-        //}
+            return Ok(chats);
+        }
     }
 }

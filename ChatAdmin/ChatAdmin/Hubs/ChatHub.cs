@@ -20,10 +20,10 @@ namespace ChatAdmin.Hubs
         }
 
 
-        public static Dictionary<string, Guid> Users = new();
-        public async Task Connect(Guid userId)
+        public static Dictionary<string,string> Users = new();
+        public async Task Connect(string userId)
         {
-            Users.Add(Context.ConnectionId, userId);
+            Users.Add(Context.ConnectionId,userId);
             chatUser user = await context.Users.FindAsync(userId);
             if (user is not null)
             {
@@ -36,7 +36,7 @@ namespace ChatAdmin.Hubs
 
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
-            Guid userId;
+            string userId;
             Users.TryGetValue(Context.ConnectionId, out userId);
             Users.Remove(Context.ConnectionId);
             chatUser user = await context.Users.FindAsync(userId);
@@ -53,7 +53,7 @@ namespace ChatAdmin.Hubs
             
             chatUser admin = await _userManager.Users.FirstOrDefaultAsync(u => u.Name=="admin@admin");
 
-            string connectionId = Users.First(p => p.Value.ToString()==admin.Id).Key;
+            string connectionId = Users.First(p => p.Value==admin.Id).Key;
             var message = new Message
             {
                 SenderId = senderId,
@@ -79,11 +79,12 @@ namespace ChatAdmin.Hubs
             };
             context.Chats.Add(message);
             await context.SaveChangesAsync();
-            string connectionId=Users.First(p=>p.Value.ToString()==message.RecipientId).Key;
+            string connectionId=Users.First(p=>p.Value==message.RecipientId).Key;
             await Clients.User(connectionId).SendAsync("ReceiveMessage", messageContent);
 
         }
     }
+
 }
 
 
