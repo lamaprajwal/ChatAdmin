@@ -58,6 +58,7 @@ namespace ChatAdmin.Controllers
                 {
                     message = "Login successful",
                     username = user.UserName,
+                    user.Id
                 });
             }
             return Unauthorized("Invalid username or password.");

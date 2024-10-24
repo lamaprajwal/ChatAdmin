@@ -44,5 +44,36 @@ namespace ChatAdmin.Controllers
 
             return Ok(chats);
         }
+        [HttpGet("UserChatList")]
+        public async Task<IActionResult> GetUsersWhoChattedWithAdmin()
+        {
+            // Find the admin user
+            var admin = await _userManager.FindByNameAsync("admin@admin");
+            if (admin == null)
+            {
+                return NotFound("Admin user not found.");
+            }
+            // Fetch user IDs that have interacted with the admin
+            var userIds = await _context.Chats
+                .Where(m => m.SenderId == admin.Id || m.RecipientId == admin.Id)
+                .Select(m => m.SenderId == admin.Id ? m.RecipientId : m.SenderId)
+                .Distinct()
+                .ToListAsync();
+            if (!userIds.Any())
+            {
+                return NotFound("No users have chatted with the admin.");
+            }
+            // Get users based on those IDs
+            var users = await _userManager.Users
+                .Where(u => userIds.Contains(u.Id))
+                .ToListAsync();
+            // Return the users as the response
+            return Ok(users);
+        }
+
+
     }
 }
+
+
+

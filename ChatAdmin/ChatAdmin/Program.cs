@@ -18,9 +18,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
     {
-        builder.AllowAnyOrigin()   // Allow any origin
-               .AllowAnyMethod()   // Allow any HTTP method (GET, POST, PUT, DELETE, etc.)
-               .AllowAnyHeader();  // Allow any headers
+        builder.WithOrigins("http://localhost:5173")
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials();
     });
 });
 builder.Services.AddSignalR();

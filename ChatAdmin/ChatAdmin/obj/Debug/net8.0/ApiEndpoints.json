@@ -54,6 +54,16 @@
   },
   {
     "ContainingType": "ChatAdmin.Controllers.ChatsController",
+    "Method": "GetUsersWhoChattedWithAdmin",
+    "RelativePath": "api/Chats/UserChatList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChatAdmin.Controllers.ChatsController",
     "Method": "GetUsers",
     "RelativePath": "api/Chats/users",
     "HttpMethod": "GET",

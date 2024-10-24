@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Collections.Generic;
 using System;
+using System.Collections.Concurrent;
 
 namespace ChatAdmin.Hubs
 {
@@ -13,63 +14,68 @@ namespace ChatAdmin.Hubs
     {
         private readonly AppDbContext context;
         private readonly UserManager<chatUser> _userManager;
+        private static readonly ConcurrentDictionary<string, string> Users = new();
         public ChatHub(AppDbContext context, UserManager<chatUser> userManager)
         {
             this.context = context;
             _userManager = userManager;
         }
-
-
-        public static Dictionary<string,string> Users = new();
         public async Task Connect(string userId)
         {
-            Users.Add(Context.ConnectionId,userId);
-            chatUser user = await context.Users.FindAsync(userId);
+            Users.TryAdd(Context.ConnectionId, userId);
+            // Load user and update status
+            var user = await context.Users.FindAsync(userId);
             if (user is not null)
             {
                 user.Status = "online";
                 await context.SaveChangesAsync();
-
                 await Clients.All.SendAsync("Users", user);
             }
         }
-
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
-            string userId;
-            Users.TryGetValue(Context.ConnectionId, out userId);
-            Users.Remove(Context.ConnectionId);
-            chatUser user = await context.Users.FindAsync(userId);
-            if (user is not null)
+            if (Users.TryRemove(Context.ConnectionId, out string userId))
             {
-                user.Status = "offline";
-                await context.SaveChangesAsync();
-
-                await Clients.All.SendAsync("Users", user);
+                var user = await context.Users.FindAsync(userId);
+                if (user is not null)
+                {
+                    user.Status = "offline";
+                    await context.SaveChangesAsync();
+                    await Clients.All.SendAsync("Users", user);
+                }
             }
         }
-        public async Task SendMessageToAdmin(string messageContent,string senderId)
+        public async Task SendMessageToAdmin(string messageContent, string senderId)
         {
-            
-            chatUser admin = await _userManager.Users.FirstOrDefaultAsync(u => u.Name=="admin@admin");
-
-            string connectionId = Users.First(p => p.Value==admin.Id).Key;
+            // Fetch the admin user
+            chatUser admin = await _userManager.Users.FirstOrDefaultAsync(u => u.Name == "admin@admin");
+            if (admin == null) throw new Exception("Admin not found.");
+            // Create and store the message in the database
             var message = new Message
             {
                 SenderId = senderId,
                 RecipientId = admin.Id,
                 Content = messageContent,
-                SentAt = DateTime.Now,
+                SentAt = DateTime.Now
             };
-
             context.Chats.Add(message);
             await context.SaveChangesAsync();
-
-            await Clients.User(connectionId).SendAsync("ReceiveMessage", senderId, messageContent);
+            // Check if the admin is connected
+            var connection = Users.FirstOrDefault(p => p.Value == admin.Id);
+            if (connection.Key != null)
+            {
+                // Send the message in real-time if the admin is online
+                await Clients.Client(connection.Key).SendAsync("ReceiveMessage", senderId, messageContent);
+            }
+            // Send the message back to the sender for confirmation
+            await Clients.Caller.SendAsync("ReceiveMessage", senderId, messageContent);
         }
         public async Task SendMessageToUser(string recipientId, string messageContent)
         {
+            // Fetch the admin user
             chatUser admin = await _userManager.Users.FirstOrDefaultAsync(u => u.Name == "admin@admin");
+            if (admin == null) throw new Exception("Admin not found.");
+            // Create and store the message in the database
             var message = new Message
             {
                 SenderId = admin.Id,
@@ -79,9 +85,14 @@ namespace ChatAdmin.Hubs
             };
             context.Chats.Add(message);
             await context.SaveChangesAsync();
-            string connectionId=Users.First(p=>p.Value==message.RecipientId).Key;
-            await Clients.User(connectionId).SendAsync("ReceiveMessage", messageContent);
-
+            // Check if the recipient is connected and send the message in real-time
+            if (Users.Any(u => u.Value == recipientId))
+            {
+                string connectionId = Users.First(p => p.Value == recipientId).Key;
+                await Clients.Client(connectionId).SendAsync("ReceiveMessage", admin.Id, messageContent);
+            }
+            // Send the message back to the admin
+            await Clients.Caller.SendAsync("ReceiveMessage", admin.Id, messageContent);
         }
     }
 
