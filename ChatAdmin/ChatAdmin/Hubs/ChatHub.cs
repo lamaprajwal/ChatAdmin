@@ -15,6 +15,7 @@ namespace ChatAdmin.Hubs
         private readonly AppDbContext context;
         private readonly UserManager<chatUser> _userManager;
         private static readonly ConcurrentDictionary<string, string> Users = new();
+        private static readonly List<string> chattedUsers = new();
         public ChatHub(AppDbContext context, UserManager<chatUser> userManager)
         {
             this.context = context;
@@ -62,6 +63,11 @@ namespace ChatAdmin.Hubs
             await context.SaveChangesAsync();
             // Check if the admin is connected
             var connection = Users.FirstOrDefault(p => p.Value == admin.Id);
+            if(!chattedUsers.Contains(senderId))
+            {
+                chattedUsers.Add(senderId);
+            }
+
             if (connection.Key != null)
             {
                 // Send the message in real-time if the admin is online
@@ -85,6 +91,10 @@ namespace ChatAdmin.Hubs
             };
             context.Chats.Add(message);
             await context.SaveChangesAsync();
+            if (!chattedUsers.Contains(recipientId))
+            {
+                chattedUsers.Add(recipientId);
+            }
             // Check if the recipient is connected and send the message in real-time
             if (Users.Any(u => u.Value == recipientId))
             {
@@ -94,6 +104,12 @@ namespace ChatAdmin.Hubs
             // Send the message back to the admin
             await Clients.Caller.SendAsync("ReceiveMessage", admin.Id, messageContent);
         }
+        
+            public Task<List<string>> GetUsersWhoChattedWithAdmin()
+            {
+                return Task.FromResult(chattedUsers);
+            }
+        
     }
 
 }
