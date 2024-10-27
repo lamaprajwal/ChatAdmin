@@ -7,6 +7,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Collections.Generic;
 using System;
 using System.Collections.Concurrent;
+using Azure.Messaging;
 
 namespace ChatAdmin.Hubs
 {
@@ -109,7 +110,20 @@ namespace ChatAdmin.Hubs
             {
                 return Task.FromResult(chattedUsers);
             }
-        
+        public async Task GetIdAllId()
+        {
+            var admin = await _userManager.FindByNameAsync("admin@admin");
+            
+            // Fetch user IDs that have interacted with the admin
+            var userIds = await context.Chats
+                .Where(m => m.SenderId == admin.Id || m.RecipientId == admin.Id)
+                .Select(m => m.SenderId == admin.Id ? m.RecipientId : m.SenderId)
+                .Distinct()
+                .ToListAsync();
+            var connection = Users.FirstOrDefault(p => p.Value == admin.Id);
+
+            await Clients.Client(connection.Key).SendAsync("ReceiveMessage", userIds);
+        }
     }
 
 }
